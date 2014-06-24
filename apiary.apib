@@ -1,0 +1,466 @@
+FORMAT: 1A
+HOST: http://www.google.com
+
+# White Label
+JSON contracts between back and front end for white label functionality
+
+# Group Game
+
+List of games
+
+Form parameters:
+<ul>
+    <li>gameId</li>
+</ul>
+
+_eventId:
+<ul>
+    <li>To activate game: activate</li>
+</ul>
+
+## Games not activated [/pages/whitelabel/games.json]
+### Valid [GET]
++ Response 200 (application/json)
+
+        {
+            "header": {
+                "showMenu": true,
+                "hideBackButton": true
+            },
+            "pageContent": {
+                "games": [
+                    {
+                        "gameId": "BP",
+                        "name": "Bill Play",
+                        "status": "NOT_ACTIVATED",
+                        "summary": "Use Bill Play and you could earn $100 to spend at www.amazon.com",
+                        "imageUrl": "https://www.bbvacompass.com/online-banking/clc/game/img/game_1_lock.png",
+                        "goalFulfillment": 4,
+                        "currentFulfillment": 0,
+                        "transactions": null,
+                        "rewardDetailsUrl": "https://www.bbvacompass.com/online-banking/game-1/rewarddetails.html",
+                        "redeemDisclosureUrl": "",
+                        "reward": null
+                    },
+                    {
+                        "gameId": "NBABP",
+                        "name": "Bill Play",
+                        "status": "NOT_ACTIVATED",
+                        "summary": "Use Bill Play and you could earn $100 to spend at www.nbastore.com",
+                        "imageUrl": "https://www.bbvacompass.com/online-banking/clc/game/img/game_1_lock.png",
+                        "goalFulfillment": 4,
+                        "currentFulfillment": 0,
+                        "transactions": null,
+                        "rewardDetailsUrl": "https://www.bbvacompass.com/online-banking/game-1/rewarddetails.html",
+                        "redeemDisclosureUrl": "",
+                        "reward": null
+                    },
+                    {
+                        "gameId": "DDD",
+                        "name": "Direct Deposit Dash",
+                        "status": "NOT_ACTIVATED",
+                        "summary": "Receive Direct Deposit and you could get $15 to spend at www.amazon.com",
+                        "imageUrl": "https://www.bbvacompass.com/online-banking/game2/img/game_2.png",
+                        "goalFulfillment": 2,
+                        "currentFulfillment": 0,
+                        "transactions": null,
+                        "rewardDetailsUrl": "https://www.bbvacompass.com/online-banking/game-2/rewarddetails.html",
+                        "redeemDisclosureUrl": "",
+                        "reward": null
+                    },
+                    {
+                        "gameId": "SOS",
+                        "name": "Swipe For Songs",
+                        "status": "NOT_ACTIVATED",
+                        "summary": "Use your BBVA Compass Check Card and you could get a $10 iTunes Gift Code!",
+                        "imageUrl": "https://www.bbvacompass.com/online-banking/game3/img/game_3.png",
+                        "goalFulfillment": 40,
+                        "currentFulfillment": 0,
+                        "transactions": null,
+                        "rewardDetailsUrl": "https://www.bbvacompass.com/online-banking/game-3/rewardsdetails.html",
+                        "redeemDisclosureUrl": "",
+                        "reward": null
+                    }
+                ]
+            }
+        }
+
+
+## Games in progress [/pages/whitelabel/games.json?mockId=inprogress]
+### Valid [GET]
++ Response 200 (application/json)
+
+        {
+            "header": {
+                "showMenu": true,
+                "hideBackButton": true
+            },
+            "pageContent": {
+                "games": [
+                    {
+                        "gameId": "BP",
+                        "name": "Bill Play",
+                        "status": "IN_PROGRESS",
+                        "summary": "75 days left",
+                        "imageUrl": "https://www.bbvacompass.com/online-banking/clc/game/img/game_1_25.png",
+                        "goalFulfillment": 4,
+                        "currentFulfillment": 2,
+                        "transactions": [
+                            {
+                                "date": 23515141111,
+                                "description": "Account Openning",
+                                "amount": null
+                            },
+                            {
+                                "date": 23511351111,
+                                "description": "First pay",
+                                "amount": 51.23
+                            }
+                        ],
+                        "rewardDetailsUrl": "https://www.bbvacompass.com/online-banking/game-1/rewarddetails.html",
+                        "redeemDisclosureUrl": "",
+                        "reward": null
+                    },
+                    {
+                        "gameId": "NBABP",
+                        "name": "Bill Play",
+                        "status": "IN_PROGRESS",
+                        "summary": "56 days left",
+                        "imageUrl": "https://www.bbvacompass.com/online-banking/clc/game/img/game_1_lock.png",
+                        "goalFulfillment": 4,
+                        "currentFulfillment": 0,
+                        "transactions": [
+                            {
+                                "date": 23515141111,
+                                "description": "Account Openning",
+                                "amount": null
+                            }
+                        ],
+                        "rewardDetailsUrl": "https://www.bbvacompass.com/online-banking/game-1/rewarddetails.html",
+                        "redeemDisclosureUrl": "",
+                        "reward": null
+                    },
+                    {
+                        "gameId": "DDD",
+                        "name": "Direct Deposit Dash",
+                        "status": "IN_PROGRESS",
+                        "summary": "50 days left",
+                        "imageUrl": "https://www.bbvacompass.com/online-banking/game2/img/game_2.png",
+                        "goalFulfillment": 2,
+                        "currentFulfillment": 1,
+                        "transactions": [
+                            {
+                                "date": 23515141111,
+                                "description": "Account Openning",
+                                "amount": null
+                            }
+                        ],
+                        "rewardDetailsUrl": "https://www.bbvacompass.com/online-banking/game-2/rewarddetails.html",
+                        "redeemDisclosureUrl": "",
+                        "reward": null
+                    },
+                    {
+                        "gameId": "SOS",
+                        "name": "Swipe For Songs",
+                        "status": "IN_PROGRESS",
+                        "summary": "12 days left",
+                        "imageUrl": "https://www.bbvacompass.com/online-banking/game3/img/game_3.png",
+                        "goalFulfillment": 40,
+                        "currentFulfillment": 25,
+                        "transactions": [
+                            {
+                                "date": 23515141111,
+                                "description": "Account Openning",
+                                "amount": null
+                            },
+                            {
+                                "date": 23515141111,
+                                "description": "Account Openning",
+                                "amount": null
+                            },
+                            {
+                                "date": 23515141111,
+                                "description": "Account Openning",
+                                "amount": null
+                            },
+                            {
+                                "date": 23515141111,
+                                "description": "Account Openning",
+                                "amount": null
+                            },
+                            {
+                                "date": 23515141111,
+                                "description": "Account Openning",
+                                "amount": null
+                            },
+                            {
+                                "date": 23515141111,
+                                "description": "Account Openning",
+                                "amount": null
+                            },
+                            {
+                                "date": 23515141111,
+                                "description": "Account Openning",
+                                "amount": null
+                            },
+                            {
+                                "date": 23515141111,
+                                "description": "Account Openning",
+                                "amount": null
+                            },
+                            {
+                                "date": 23515141111,
+                                "description": "Account Openning",
+                                "amount": null
+                            },
+                            {
+                                "date": 23515141111,
+                                "description": "Account Openning",
+                                "amount": null
+                            }
+                        ],
+                        "rewardDetailsUrl": "https://www.bbvacompass.com/online-banking/game-3/rewardsdetails.html",
+                        "redeemDisclosureUrl": "",
+                        "reward": null
+                    }
+                ]
+            }
+        }
+
+
+## Games in progress [/pages/whitelabel/games.json?mockId=complete]
+### Valid [GET]
++ Response 200 (application/json)
+
+        {
+            "header": {
+                "showMenu": true,
+                "hideBackButton": true
+            },
+            "pageContent": {
+                "games": [
+                    {
+                        "gameId": "BP",
+                        "name": "Bill Play",
+                        "status": "COMPLETE",
+                        "summary": "Congratulations! You have earned the Bill Pay reward",
+                        "imageUrl": "https://www.bbvacompass.com/online-banking/clc/game/img/game_1_100.png",
+                        "goalFulfillment": 4,
+                        "currentFulfillment": 4,
+                        "transactions": [
+                            {
+                                "date": 23515141111,
+                                "description": "Account Openning",
+                                "amount": null
+                            },
+                            {
+                                "date": 23511351111,
+                                "description": "First pay",
+                                "amount": 51.23
+                            },
+                            {
+                                "date": 23511351111,
+                                "description": "Second pay",
+                                "amount": 51.23
+                            },
+                            {
+                                "date": 23511351111,
+                                "description": "Third pay",
+                                "amount": 51.23
+                            }
+                        ],
+                        "rewardDetailsUrl": "https://www.bbvacompass.com/online-banking/game-1/rewarddetails.html",
+                        "redeemDisclosureUrl": "https://www.bbvacompass.com/online-banking/game-1/rewarddetails.html",
+                        "reward": {
+                            "code": "5121HH-23GG2",
+                            "pin": "14252522",
+                            "redeemUrl": "http://www.amazon.com/gp/css/gc/payment/view-gc-balance",
+                            "amount": 100
+                        }
+                    },
+                    {
+                        "gameId": "NBABP",
+                        "name": "Bill Play",
+                        "status": "COMPLETE",
+                        "summary": "56 days left",
+                        "imageUrl": "https://www.bbvacompass.com/online-banking/clc/game/img/game_1_lock.png",
+                        "goalFulfillment": 4,
+                        "currentFulfillment": 0,
+                        "transactions": [
+                            {
+                                "date": 23515141111,
+                                "description": "Account Openning",
+                                "amount": null
+                            }
+                        ],
+                        "rewardDetailsUrl": "https://www.bbvacompass.com/online-banking/game-1/rewarddetails.html",
+                        "redeemDisclosureUrl": "",
+                        "reward": {
+                            "code": "4821HH-83G45",
+                            "pin": "04234212",
+                            "redeemUrl": "http://www.nbastore.com/bbvacompass",
+                            "amount": 100
+                        }
+                    },
+                    {
+                        "gameId": "DDD",
+                        "name": "Direct Deposit Dash",
+                        "status": "COMPLETE",
+                        "summary": "50 days left",
+                        "imageUrl": "https://www.bbvacompass.com/online-banking/game2/img/game_2.png",
+                        "goalFulfillment": 2,
+                        "currentFulfillment": 1,
+                        "transactions": [
+                            {
+                                "date": 23515141111,
+                                "description": "Account Openning",
+                                "amount": null
+                            }
+                        ],
+                        "rewardDetailsUrl": "https://www.bbvacompass.com/online-banking/game-2/rewarddetails.html",
+                        "redeemDisclosureUrl": "",
+                        "reward": {
+                            "code": "76209H-40G45",
+                            "redeemUrl": "http://www.amazon.com/gp/css/gc/payment/view-gc-balance",
+                            "amount": 10
+                        }
+                    },
+                    {
+                        "gameId": "SOS",
+                        "name": "Swipe For Songs",
+                        "status": "COMPLETE",
+                        "summary": "12 days left",
+                        "imageUrl": "https://www.bbvacompass.com/online-banking/game3/img/game_3.png",
+                        "goalFulfillment": 40,
+                        "currentFulfillment": 40,
+                        "transactions": [
+                            {
+                                "date": 23515141111,
+                                "description": "Account Openning",
+                                "amount": null
+                            },
+                            {
+                                "date": 23515141111,
+                                "description": "Account Openning",
+                                "amount": null
+                            },
+                            {
+                                "date": 23515141111,
+                                "description": "Account Openning",
+                                "amount": null
+                            },
+                            {
+                                "date": 23515141111,
+                                "description": "Account Openning",
+                                "amount": null
+                            },
+                            {
+                                "date": 23515141111,
+                                "description": "Account Openning",
+                                "amount": null
+                            },
+                            {
+                                "date": 23515141111,
+                                "description": "Account Openning",
+                                "amount": null
+                            },
+                            {
+                                "date": 23515141111,
+                                "description": "Account Openning",
+                                "amount": null
+                            },
+                            {
+                                "date": 23515141111,
+                                "description": "Account Openning",
+                                "amount": null
+                            },
+                            {
+                                "date": 23515141111,
+                                "description": "Account Openning",
+                                "amount": null
+                            },
+                            {
+                                "date": 23515141111,
+                                "description": "Account Openning",
+                                "amount": null
+                            }
+                        ],
+                        "rewardDetailsUrl": "https://www.bbvacompass.com/online-banking/game-3/rewardsdetails.html",
+                        "redeemDisclosureUrl": "",
+                        "reward": {
+                            "code": "25986H-HH325",
+                            "redeemUrl": "http://www.amazon.com",
+                            "amount": 10
+                        }
+                    }
+                ]
+            }
+        }
+
+
+## Games expired [/pages/whitelabel/games.json?mockId=expired]
+### Valid [GET]
++ Response 200 (application/json)
+
+        {
+            "header": {
+                "showMenu": true,
+                "hideBackButton": true
+            },
+            "pageContent": {
+                "games": [
+                    {
+                        "gameId": "BP",
+                        "name": "Bill Play",
+                        "status": "EXPIRED",
+                        "summary": "Expired",
+                        "imageUrl": "https://www.bbvacompass.com/online-banking/clc/game/img/game_1_lock.png",
+                        "goalFulfillment": 4,
+                        "currentFulfillment": 0,
+                        "transactions": null,
+                        "rewardDetailsUrl": "https://www.bbvacompass.com/online-banking/game-1/rewarddetails.html",
+                        "redeemDisclosureUrl": "",
+                        "reward": null
+                    },
+                    {
+                        "gameId": "NBABP",
+                        "name": "Bill Play",
+                        "status": "EXPIRED",
+                        "summary": "Expired",
+                        "imageUrl": "https://www.bbvacompass.com/online-banking/clc/game/img/game_1_lock.png",
+                        "goalFulfillment": 4,
+                        "currentFulfillment": 0,
+                        "transactions": null,
+                        "rewardDetailsUrl": "https://www.bbvacompass.com/online-banking/game-1/rewarddetails.html",
+                        "redeemDisclosureUrl": "",
+                        "reward": null
+                    },
+                    {
+                        "gameId": "DDD",
+                        "name": "Direct Deposit Dash",
+                        "status": "EXPIRED",
+                        "summary": "Expired",
+                        "imageUrl": "https://www.bbvacompass.com/online-banking/game2/img/game_2.png",
+                        "goalFulfillment": 2,
+                        "currentFulfillment": 0,
+                        "transactions": null,
+                        "rewardDetailsUrl": "https://www.bbvacompass.com/online-banking/game-2/rewarddetails.html",
+                        "redeemDisclosureUrl": "",
+                        "reward": null
+                    },
+                    {
+                        "gameId": "SOS",
+                        "name": "Swipe For Songs",
+                        "status": "EXPIRED",
+                        "summary": "Expired",
+                        "imageUrl": "https://www.bbvacompass.com/online-banking/game3/img/game_3.png",
+                        "goalFulfillment": 40,
+                        "currentFulfillment": 0,
+                        "transactions": null,
+                        "rewardDetailsUrl": "https://www.bbvacompass.com/online-banking/game-3/rewardsdetails.html",
+                        "redeemDisclosureUrl": "",
+                        "reward": null
+                    }
+                ]
+            }
+        }

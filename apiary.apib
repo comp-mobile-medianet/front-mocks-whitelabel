@@ -581,3 +581,69 @@ _eventId:
             }
         }
             
+# Group Scores
+
+Show scores
+
+Form parameters:
+<ul>
+    <li>gameId</li>
+</ul>
+
+_eventId:
+<ul>
+    <li>To activate game: acceptTerms</li>
+    <li>To decline: declineTerms</li>
+</ul>
+
+## Scores [/pages/whitelabel/scores.json]
+### Valid [GET]
++ Response 200 (application/json)
+
+        {
+            "header": {
+                "showMenu": true
+            },
+            "pageContent": {
+                "activeDayIndex": "2",
+                "days": [
+                    {
+                        "date": "Thu, Jun 14",
+                        "matches": [ 
+                            {
+                                "url": "",
+                                "local": {
+                                    "key": "PHX",
+                                    "score": 99
+                                },
+                                "quarter": 4,
+                                "status" : "FINISHED",
+                                "statusText": "FINAL",
+                                "text": null,
+                                "visitant": {
+                                    "key": "LAC",
+                                    "score": 117
+                                }
+                            },
+                            {
+                                "url": "",
+                                "local": {
+                                    "key": "GSW",
+                                    "score": 101
+                                },
+                                "quarter": 4,
+                                "status" : "FINISHED",
+                                "statusText": "FINAL",
+                                "text": null,
+                                "visitant": {
+                                    "key": "WAS",
+                                    "score": 97
+                                }
+                            }
+                        ]
+                        
+                    }
+                ]
+            }
+        }                    
+

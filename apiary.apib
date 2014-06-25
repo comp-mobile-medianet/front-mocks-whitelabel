@@ -460,7 +460,7 @@ _eventId:
                         "goalFulfillment": 2,
                         "currentFulfillment": 0,
                         "transactions": null,
-                        "rewardDetailsUrl": "https://www.bbvacompass.com/online-banking/game-2/rewarddetails.html",
+                        "rewardDetailsUrl": "https://www.bbvacompass.com/online-banking/game-3/rewardsdetails.html",
                         "redeemDisclosureUrl": "",
                         "reward": null
                     },
@@ -480,3 +480,81 @@ _eventId:
                 ]
             }
         }
+
+
+# Group Terms & Conditions
+
+Show terms to activate a game
+
+Form parameters:
+<ul>
+    <li>gameId</li>
+    <li>accountKey</li>
+</ul>
+
+_eventId:
+<ul>
+    <li>To activate game: acceptTerms</li>
+    <li>To decline: declineTerms</li>
+</ul>
+
+## DDD [/pages/whitelabel/games/terms.json]
+### Valid [GET]
++ Response 200 (application/json)
+
+        {
+            "pageContent": {
+                "game": {
+                    "gameId": "DDD",
+                    "name": "Direct Deposit Dash"
+                },
+                "url": "http://www.bbvacompass.com/online-banking/nba/game/rewards-disclosure.html"
+            }
+        }                    
+
+
+# Group Activate
+
+List of account to activate a game
+
+Form parameters:
+<ul>
+    <li>gameId</li>
+    <li>accountKey</li>
+</ul>
+
+_eventId:
+<ul>
+    <li>To activate game: activate</li>
+    <li>To cancel: cancel</li>
+</ul>
+
+## Two accounts [/pages/whitelabel/games/activate.json]
+### Valid [GET]
++ Response 200 (application/json)
+
+        {
+            "header": {
+                "showMenu": true
+            },
+            "pageContent": {
+                "game": {
+                    "gameId": "DDD",
+                    "name": "Direct Deposit Dash",
+                    "rewardDetailsUrl": "https://www.bbvacompass.com/online-banking/game-3/rewardsdetails.html"
+                },
+                "accounts": [
+                    {
+                        "key": "00000000",
+                        "description": "Checkongggg",
+                        "accountLast4": "5522"
+                    },
+                    {
+                        "key": "00000001",
+                        "description": "Checkingggg",
+                        "accountLast4": "6132"
+                    }
+                ]
+            }
+        }
+            

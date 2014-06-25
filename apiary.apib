@@ -556,4 +556,28 @@ _eventId:
                 ]
             }
         }
+        
+## One accounts [/pages/whitelabel/games/activate.json?mockId=oneaccount]
+### Valid [GET]
++ Response 200 (application/json)
+
+        {
+            "header": {
+                "showMenu": true
+            },
+            "pageContent": {
+                "game": {
+                    "gameId": "DDD",
+                    "name": "Direct Deposit Dash",
+                    "rewardDetailsUrl": "https://www.bbvacompass.com/online-banking/game-3/rewardsdetails.html"
+                },
+                "accounts": [
+                    {
+                        "key": "00000000",
+                        "description": "Checkongggg",
+                        "accountLast4": "5522"
+                    }
+                ]
+            }
+        }
             

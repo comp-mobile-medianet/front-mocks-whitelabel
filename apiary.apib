@@ -4,6 +4,156 @@ HOST: http://www.google.com
 # White Label
 JSON contracts between back and front end for white label functionality
 
+# Landing page
+
+List of games and valid SimpleCashBack accounts
+
+_eventId:
+<ul>
+    <li>To games slider: viewGame</li>
+    <li>To accounts slider: viewScb</li>
+</ul>
+
+## User with games and SCB [/pages/whitelabel/rewardList.json]
+### Valid [GET]
++ Response 200 (application/json)
+
+        {
+            "header": {
+                "showMenu": true
+            },
+            "user": {
+                "agent": {
+                    "os": "Android"
+                },
+                "wlBrand": "NBA"
+            },
+            "pageContent": {
+                "games": [
+                    {
+                        "gameId": "BP",
+                        "name": "Bill Play",
+                        "status": "NOT_ACTIVATED",
+                        "summary": "Use Bill Play and you could earn $100 to spend at www.amazon.com",
+                        "imageUrl": "https://www.bbvacompass.com/online-banking/clc/game/img/game_1_lock.png",
+                        "goalFulfillment": 4,
+                        "currentFulfillment": 0,
+                        "transactions": null,
+                        "rewardDetailsUrl": "https://www.bbvacompass.com/online-banking/game-1/rewarddetails.html",
+                        "redeemDisclosureUrl": "",
+                        "reward": null
+                    },
+                    {
+                        "gameId": "NBABP",
+                        "name": "Bill Play",
+                        "status": "NOT_ACTIVATED",
+                        "summary": "Use Bill Play and you could earn $100 to spend at www.nbastore.com",
+                        "imageUrl": "https://www.bbvacompass.com/online-banking/clc/game/img/game_1_lock.png",
+                        "goalFulfillment": 4,
+                        "currentFulfillment": 0,
+                        "transactions": null,
+                        "rewardDetailsUrl": "https://www.bbvacompass.com/online-banking/game-1/rewarddetails.html",
+                        "redeemDisclosureUrl": "",
+                        "reward": null
+                    },
+                    {
+                        "gameId": "DDD",
+                        "name": "Direct Deposit Dash",
+                        "status": "NOT_ACTIVATED",
+                        "summary": "Receive Direct Deposit and you could get $15 to spend at www.amazon.com",
+                        "imageUrl": "https://www.bbvacompass.com/online-banking/game2/img/game_2.png",
+                        "goalFulfillment": 2,
+                        "currentFulfillment": 0,
+                        "transactions": null,
+                        "rewardDetailsUrl": "https://www.bbvacompass.com/online-banking/game-2/rewarddetails.html",
+                        "redeemDisclosureUrl": "",
+                        "reward": null
+                    },
+                    {
+                        "gameId": "SOS",
+                        "name": "Swipe For Songs",
+                        "status": "NOT_ACTIVATED",
+                        "summary": "Use your BBVA Compass Check Card and you could get a $10 iTunes Gift Code!",
+                        "imageUrl": "https://www.bbvacompass.com/online-banking/game3/img/game_3.png",
+                        "goalFulfillment": 40,
+                        "currentFulfillment": 0,
+                        "transactions": null,
+                        "rewardDetailsUrl": "https://www.bbvacompass.com/online-banking/game-3/rewardsdetails.html",
+                        "redeemDisclosureUrl": "",
+                        "reward": null
+                    }
+                ],
+                "scb": [
+                {
+                    "activeAccount": true,
+                    "description": "Checking",
+                    "accountLast4": "5566",
+                    "customerId": "0011986951",
+                    "accountKey": "123213333"
+                },
+                {
+                    "activeAccount": true,
+                    "description": "Checking",
+                    "accountLast4": "5566",
+                    "customerId": "0011986951",
+                    "accountKey": "123213333",
+                    "nCurrentOffers": 2,
+                    "nActiveOffers": 5
+                },
+                {
+                    "activeAccount": false,
+                    "description": "Checkooong",
+                    "accountLast4": "6234",
+                    "customerId": "3262346332",
+                    "accountKey": "123213"
+                }
+            ]
+        }
+                    
+
+## User without games [/pages/whitelabel/rewardList.json?mockId=nogames]
+### Valid [GET]
++ Response 200 (application/json)
+
+        {
+            "header": {
+                "showMenu": true
+            },
+            "user": {
+                "agent": {
+                    "os": "Android"
+                },
+                "wlBrand": "NBA"
+            },
+            "pageContent": {
+                "scb": [
+                {
+                    "activeAccount": true,
+                    "description": "Checking",
+                    "accountLast4": "5566",
+                    "customerId": "0011986951",
+                    "accountKey": "123213333"
+                },
+                {
+                    "activeAccount": true,
+                    "description": "Checking",
+                    "accountLast4": "5566",
+                    "customerId": "0011986951",
+                    "accountKey": "123213333",
+                    "nCurrentOffers": 2,
+                    "nActiveOffers": 5
+                },
+                {
+                    "activeAccount": false,
+                    "description": "Checkooong",
+                    "accountLast4": "6234",
+                    "customerId": "3262346332",
+                    "accountKey": "123213"
+                }
+            ]
+        }
+               
+
 # Group Game
 
 List of games
